@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Dashboard
+        </ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid fixed>
+        <ion-list>
+            <div>
+                <ion-item *ngFor="let item of players; let i = index" >
+                    <b>#{{i + 1}}</b>
+                    &nbsp;
+                    <ion-avatar>
+                        <ion-img [src]="item.club.logo">
+                        </ion-img>
+                    </ion-avatar>
+                    &nbsp;
+                    {{item.name}} - {{item.club.club}}
+                    &nbsp;
+                    <div slot="end">
+                        <b>{{item.money}} €</b>
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-grid>
+</ion-content>
