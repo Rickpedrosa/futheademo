@@ -6,6 +6,8 @@ const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'home', loadChildren: './pages/home/home.module#HomePageModule', canActivate: [AuthGuard]},
     {path: 'login', loadChildren: './pages/login/login.module#LoginPageModule'},
+    {path: 'match', loadChildren: './pages/match/match.module#MatchPageModule', canActivate: [AuthGuard]},
+    {path: 'team-finder', loadChildren: './pages/team-finder/team-finder.module#TeamFinderPageModule', canActivate: [AuthGuard]},
 ];
 
 @NgModule({

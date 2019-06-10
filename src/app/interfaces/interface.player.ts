@@ -1,9 +1,10 @@
-import {Club} from './interface.club';
-
 export interface Player {
-    id: number;
-    name: string;
-    date: string;
-    club: Club;
-    money: number;
+    id: any;
+    player_club: any;
+    player_name: any;
+    player_nationality: any;
+    player_photo: any;
+    player_potential: any;
+    player_price: any;
+    positions: any[];
 }

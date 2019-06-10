@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Player} from '../../interfaces/interface.player';
+import {User} from '../../interfaces/interface.user';
 import {ApiService} from '../../services/api/api.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {ApiService} from '../../services/api/api.service';
 })
 export class HomePage implements OnInit {
 
-    players: Player[] = [{
+    players: User[] = [{
         id: 1,
         name: 'Ricknardo',
         date: new Date().toString(),
@@ -67,9 +67,6 @@ export class HomePage implements OnInit {
     }
 
     ngOnInit(): void {
-        this.api.proba().subscribe(data => {
-            console.log(data);
-        });
     }
 
 }

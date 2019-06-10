@@ -25,6 +25,12 @@ export class ApiService {
         });
     }
 
+    getAllClubs() {
+        return this.http.get(this.TEAMS, {
+            params: new HttpParams().set('all', 'true')
+        });
+    }
+
     getRandomClubs(amount: string) {
         return this.http.get(this.TEAMS, {
             params: new HttpParams().set('random', amount)

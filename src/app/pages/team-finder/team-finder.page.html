@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-searchbar (ionInput)="showQuery($event)"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid fixed>
+        <ion-list>
+            <ion-item *ngFor="let item of clubsLoaded">
+                <ion-avatar>
+                    <ion-img [src]="item.logo" onError="this.src='./assets/icon/favicon.png'">
+                    </ion-img>
+                </ion-avatar>
+                &nbsp;
+                {{item.club}}
+                &nbsp;
+                <div slot="end">
+                    <b>{{item.quality}}</b>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                         loadingText="Loading more data..."></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </ion-grid>
+</ion-content>
