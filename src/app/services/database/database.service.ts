@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {Club} from '../../interfaces/interface.club';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class DatabaseService {
 
-  constructor() { }
+    clubsInUse: string[] = [];
+
+    constructor() {
+    }
 }

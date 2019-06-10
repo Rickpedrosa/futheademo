@@ -30,4 +30,10 @@ export class ApiService {
             params: new HttpParams().set('random', amount)
         });
     }
+
+    proba() {
+        return this.http.get('http://localhost/api/entity/proba', {
+            params: new HttpParams().set('clubs_used', '1,2,3,4')
+        });
+    }
 }

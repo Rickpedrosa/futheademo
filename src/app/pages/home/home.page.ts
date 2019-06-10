@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Player} from '../../interfaces/interface.player';
+import {ApiService} from '../../services/api/api.service';
 
 @Component({
     selector: 'app-home',
@@ -61,11 +62,14 @@ export class HomePage implements OnInit {
             }
         }];
 
-    constructor() {
+    constructor(private api: ApiService) {
         console.log(this.players.sort((a, b) => b.money - a.money));
     }
 
     ngOnInit(): void {
+        this.api.proba().subscribe(data => {
+            console.log(data);
+        });
     }
 
 }
